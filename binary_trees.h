@@ -52,5 +52,6 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 /* Advanced Tasks */
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+bst_t *bst_search(const bst_t *tree, int value);
 
 #endif
