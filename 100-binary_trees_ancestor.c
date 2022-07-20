@@ -5,7 +5,8 @@
  * @second: 2d node
  * Return: pointer to the ancestor or null
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second)
 {
 	binary_tree_t *aux1 = (binary_tree_t *)first, *aux2;
 
