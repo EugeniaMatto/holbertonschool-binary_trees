@@ -9,8 +9,8 @@ int binary_tree_s(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree &&
-	(binary_tree_is_perfect_(tree->left) == binary_tree_is_perfect_(tree->right) &&
-	binary_tree_balance_h(tree->left) == binary_tree_balance_h(tree->right)))
+	(binary_tree_s(tree->left) == binary_tree_s(tree->right) &&
+	binary_tree_h(tree->left) == binary_tree_h(tree->right)))
 		return (1);
 	return (0);
 }
