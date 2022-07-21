@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+int binary_tree_is_bst_(const binary_tree_t *tree, int flag);
 /**
  * binary_tree_is_bst - checks if a binary tree is a valid Binary Search Tree
  * @tree: pointer to the root node of the tree
@@ -6,11 +7,24 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	binary_tree_t *aux = (binary_tree_t *)tree;
 	int flag = 0;
 
 	if (!tree)
 		return (0);
+	binary_tree_is_bst_(tree, flag);
+
+}
+
+/**
+ * binary_tree_is_bst_ - betty
+ * @tree: pointer
+ * @flag: flag
+ * Return: 1 or 0
+ */
+int binary_tree_is_bst_(const binary_tree_t *tree, int flag)
+{
+	binary_tree_t *aux = (binary_tree_t *)tree;
+
 	if (!tree->left && !tree->right)
 	{
 		aux = aux->parent;
@@ -21,7 +35,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 				flag = 1;
 			if (aux && tree->parent->n < aux->n)
 				flag = -1;
-			while(aux)
+			while (aux)
 			{
 				if (flag == 1)
 					if (tree->n <= aux->n)
@@ -47,6 +61,5 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return (binary_tree_is_bst(tree->right));
 	if (!tree->right)
 		return (binary_tree_is_bst(tree->left));
-	return (binary_tree_is_bst(tree->left) &&
-                        binary_tree_is_bst(tree->right));
+	return (binary_tree_is_bst(tree->left) && binary_tree_is_bst(tree->right));
 }
