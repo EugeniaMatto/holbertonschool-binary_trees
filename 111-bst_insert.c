@@ -11,7 +11,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 
 	if (!tree)
 		return (NULL);
-	if(!*tree)
+	if (!*tree)
 	{
 		*tree = binary_tree_node(NULL, value);
 		if (!*tree)
@@ -19,7 +19,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 		return (*tree);
 	}
 	aux = *tree;
-	while(aux)
+	while (aux)
 	{
 		ant = aux;
 		if (aux->n == value)
