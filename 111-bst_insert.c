@@ -22,10 +22,12 @@ bst_t *bst_insert(bst_t **tree, int value)
 	while(aux)
 	{
 		ant = aux;
+		if (aux->n == value)
+			return (NULL);
 		if (aux->n > value)
-			aux = aux->right;
-		else
 			aux = aux->left;
+		else
+			aux = aux->right;
 	}
 	new = binary_tree_node(ant, value);
 	if (!ant)
