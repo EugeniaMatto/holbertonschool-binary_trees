@@ -11,8 +11,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
-	binary_tree_is_bst_(tree, flag);
-
+	return (binary_tree_is_bst_(tree, flag));
 }
 
 /**
